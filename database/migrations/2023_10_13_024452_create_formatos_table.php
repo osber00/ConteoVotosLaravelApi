@@ -15,7 +15,7 @@ class CreateFormatosTable extends Migration
     {
         Schema::create('formatos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->default(1);
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('lugar_id');
             $table->foreign('lugar_id')->references('id')->on('lugars');

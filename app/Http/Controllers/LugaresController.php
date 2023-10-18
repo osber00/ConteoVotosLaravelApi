@@ -10,7 +10,7 @@ class LugaresController extends Controller
 {
     public function index()
     {
-        $lugares = Lugar::with('formatos')->get();
+        $lugares = Lugar::with('formatos')->orderBy('nombre','asc')->get();
         return response()->json(['data'=>$lugares, 'estado'=>'success']);
     }
 

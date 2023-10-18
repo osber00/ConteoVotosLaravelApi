@@ -28,6 +28,12 @@ class DataInicialSeeder extends Seeder
 
     private function usuarios()
     {
+        User::create([
+            'name' => 'Admin',
+            'email' => 'admin@email.com',
+            'identificacion' => '1102796781',
+            'password' => bcrypt('1102796781')
+        ]);
         for ($i = 1; $i <= 15; $i++){
             $usuario = User::create([
                 'name' => 'Usuario '.$i,
