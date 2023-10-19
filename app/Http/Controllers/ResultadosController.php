@@ -23,7 +23,7 @@ class ResultadosController extends Controller
             $candidato->porcentaje = ($candidato->votos_totales / $totalVotos) * 100;
         });
 
-        return response()->json(['candidatos' => $candidatos]);
+        return response()->json(['data' => $candidatos]);
     }
 
     public function ganador()
@@ -35,6 +35,6 @@ class ResultadosController extends Controller
             ->orderBy('total_votos', 'desc') // Ordena por votos en orden descendente
             ->first(); // Obtiene el primer resultado (el candidato con más votos)
 
-        return response()->json(['ganador' => $ganador]);
+        return response()->json(['data' => $ganador]);
     }
 }

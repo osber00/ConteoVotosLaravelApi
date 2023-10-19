@@ -14,6 +14,14 @@ class FormatosController extends Controller
         return response()->json(['data'=>$formatos, 'estado'=>'success']);
     }
 
+    public function edit($id)
+    {
+        $data = Formato::with('lugar','candidatos')
+            ->where('id',$id)
+            ->first();
+        return response()->json(['data'=>$data]);
+    }
+
     public function store(Request $request)
     {
         $rules = [

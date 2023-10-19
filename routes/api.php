@@ -26,6 +26,7 @@ Route::delete('lugares/{id}', [LugaresController::class, 'delete']);
 
 //Formatos
 Route::get('/formatos', [FormatosController::class, 'index']);
+Route::get('/formatos/{id}', [FormatosController::class, 'edit']);
 Route::post('/formatos', [FormatosController::class, 'store']);
 Route::post('/formatos/{id}', [FormatosController::class, 'update']);
 
